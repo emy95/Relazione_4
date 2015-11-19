@@ -29,7 +29,7 @@
 	\renewcommand{\abstractname}{Abstract}
 
 	\begin{abstract}
-In questa esperienza si è realizzato il cosiddetto Ponte di Wien con un condensatore dal valore incognito. Per farne una misura si è cercato di realizzare le condizioni per il bilanciamento del ponte. In un secondo momento, si è studiato la risposta del circuito a piccoli cambiamenti della capacità, attraverso lo oscilloscopio. In questo modo si è potuto quantificare con quale precisione il circuito risponde alla più piccola variazione di capacità apprezzabile. 
+In questa esperienza si è realizzato il Ponte di Wien con un condensatore dal valore incognito. Per farne una misura si sono realizzate le condizioni per il bilanciamento del ponte. In un secondo momento, si è studiato la risposta del circuito a piccoli cambiamenti di capacità. In questo modo si è potuto quantificare con quale precisione il circuito risponde alla più piccola variazione di capacità apprezzabile. 
 
 	\end{abstract}
   \vspace{10em}
@@ -55,11 +55,9 @@ In questa esperienza si è realizzato il cosiddetto Ponte di Wien con un condens
 \item Oscilloscopio 
 \end{itemize}
 \section{Procedura di misura}
-Nella prima parte dell'esperienza si è misurato il valore della capacità di un condensatore incognito. Per fare ciò si è costruito il circuito mostrato in figura, chiamato comunemente Ponte di Wien. Questo è stato costruito utilizzando il condensatore dal valore incognito, un altro condensatore e 3 resistenze, i cui valori sono mostrati in tabella.
-Al circuito è stato collegato l'oscilloscopio attraverso i cavi coassiali, in modo tale da mostrare in uscita la differenza di potenziale tra i lati del ponte. Sistemato il tutto, si è proceduto al bilanciamento del ponte. Ciò equivale a cercare le condizioni di frequenza e di resistenze $R_r$ ( che può essere facilmente variata attraverso una decade) per cui la differenza di tensione tra i due lati del ponte è pari a 0. \\
-Quindi, osservando lo schermo dell'oscilloscopio, e adottando un opportuno numero di medie sul segnale in uscita per ridurne il rumore, è possibile valutare per quali valori di frequenza e resistenza il segnale in uscita è pressoché nullo. Ottenuti questi valori, si è calcolato il valore della capacità prevista dalla teoria e verificata la compatibilità con il valore calcolato dal multimetro digitale. \newline \break
-Una volta ottenuta la configurazione di bilanciamento, si è deciso di misurare la sensibilità del circuito a piccole variazione della capacità. Inizialmente si è posto in parallelo alla capacità $C$ una decade di capacità. Variando ogni volta la capacità in parallelo di $1 nF$ si sono prese 10 volte i valori della tensione in uscita letti dallo oscilloscopio, ripetendo la misura per 5 volte. Successivamente, sono stati presi altri dati con la decade in serie con il condensatore, seguendo lo stesso procedimento.\\
-Attraverso i dati raccolti, si è poi potuto studiare in che modo il circuito rispondeva alle piccole variazioni di impedenza nella condizione di bilanciamento. 
+Nella prima parte dell'esperienza si è misurato il valore della capacità di un condensatore incognito $C_x$. Per fare ciò si è costruito il circuito mostrato in figura \eqref{fig:circuito}, chiamato Ponte di Wien. 
+Al circuito è stato collegato l'oscilloscopio in modalità \emph{math} con numero di medie pari a 8, per la misura di $V_{out}$. Abbiamo bilanciato poi il ponte, cercando i valori di frequenza e di resistenza $R_r$ che danno un uscita del ponte il più possibile nulla.\\ Dalle condizioni di bilanciamento siamo risaliti al valore della capacità $C_x$.
+Per misurare la sensibilità del circuito abbiamo fatto piccole variazioni di $C_x$ con una scatola decade di capacità in parallelo e in serie a $C_x$. Per ogni variazione si sono prese 10 misure.
 \begin{table}[H]
 \centering
 \begin{tabular}{c|c}
@@ -69,7 +67,7 @@ Attraverso i dati raccolti, si è poi potuto studiare in che modo il circuito ri
 $R_1$ &  $1007.2\pm 11.0720 \ohm$   \\
 $R_2$ &  $997.80\pm 10.9780 \ohm$  \\
 $R_x$ & $999.021 \pm 10.9902 \ohm$  \\
-$C_x$ & $112 \text{ nF} \pm $ \\
+$C_2$ & $112 \pm 5.48 \text{ nF}$ \\
 \bottomrule
 \end{tabular}
 \caption{Valori misurati con il multimetro digitale}
@@ -114,7 +112,7 @@ to[short, -o](5.5, 3.5)
 ;
 \end{circuitikz}
 
-\caption{Circuito utilizzato}
+\caption{Circuito utilizzato, ponte di Wien}
 \label{fig:circuito}
 \end{figure}
 
@@ -124,7 +122,7 @@ to[short, -o](5.5, 3.5)
 \includegraphics[width=\textwidth]{pontebilanciato}
 \caption{Uscita del ponte bilanciato al meglio delle nostre possibilità}
 \end{figure}
-Il ponte è stato innanzitutto bilanciato, cercando la frequenza di bilanciamento e la giusta resistenza $R_r$. Le condizioni di bilanciamento, ovvero $V_{out}=0$ sono: 
+Per ottenere le condizioni di bilanciamento, ovvero $V_{out}=0$, bisogna soddisfare le seguenti equazioni: 
  \begin{equation}
  \frac{R_2}{R_x} + \frac{C_x}{C_2} = \frac{R_1}{R_r}
  \end{equation}
@@ -147,7 +145,7 @@ $f$ & $ 1178.24\pm 0.5 Hz $ \\
 \rowcolor{black!20}$C_x$ & $156.82 \pm 3.6349 nF $ \\
 \bottomrule
 \end{tabular}
-\caption{Valori di bilanciamento e $C_x$ ricavato}
+\caption{Valori di bilanciamento e $C_x$ ricavato, con $f = \omega/2\pi$}
 \end{table}
 L'incertezza su $C_x$ si ottiene propagando l'incertezza dall'equazione \eqref{eq:cx}
 
@@ -157,14 +155,14 @@ L'uscita del ponte sbilanciato segue una legge del tipo
 \label{eq:gen}
 V_{out} = V_c\, sin(\omega t + \phi) + V_r\, cos(\omega t + \phi)
 \end{equation}
-Dove le ampiezza $V_c$ e $V_r$ dipendono rispettivamente da una variazione lineare di $C_x$ e di $R_x$. Noi siamo interessati solo alla variazione che abbiamo fatto di $C_x$ per cui ci interessiamo solo del termine seno, sviluppandolo con le forme di addizione otteniamo
+Dove le ampiezza $V_c$ e $V_r$ dipendono rispettivamente da una variazione lineare di $C_x$ e di $R_x$ per valori vicini alla condizione di bilanciamento: $V_c = (\partial V_c/\partial C_x) \Delta C_x$. Sviluppandolo con le forme di addizione otteniamo
 \begin{equation}
 \label{eq:fit}
 V_{out}=V_0 + V_{sin}\, sin (\omega t) + V_{cos} \,cos(\omega t)
 \end{equation}
 Dove abbiamo:
 \begin{equation}
-V_{sin} = V_c\, cos\phi \qquad V_{cos} = V_c\, sin\phi
+V_{sin} = V_c\, cos\phi -V_r\, sin\phi \qquad V_{cos} = V_c\, sin\phi + V_r\, cos\phi
 \end{equation}
 $V_0$ è stato aggiunto per eliminare un eventuale errore di offset. Possiamo ora fare il fit sui nostri dati con l'equazione \eqref{eq:fit}.
 I valori di $V_{sin}$ e $V_{cos}$ sono stati calcolati come media dei 10 valori delle nostre misure, e come loro incertezza la deviazione standard.
@@ -186,7 +184,7 @@ Possiamo trovare
 \phi = \arctan{\frac{B_c}{B_s}}
 \end{equation}
 \begin{equation}
-\frac{\partial{V_{out}}}{\partial{C_x}} = \sqrt{B_s^2 + B_c^2}
+\frac{\partial{V_{c}}}{\partial{C_x}} = \sqrt{B_s^2 + B_c^2}
 \end{equation}
 \begin{figure}[H]
 \centering
@@ -200,13 +198,13 @@ Dai nostri dati otteniamo
 \toprule
 \multicolumn{2}{c}{Valori ottenuti dal fit}\\
 \midrule
-\rowcolor{black!20}$\phi$ & $430 \pm 4.3  \ohm$ \\
-$\partial V_{out}/\partial C_x $ & $ 1178.24\pm 0.5 Hz $ \\
+\rowcolor{black!20}$\phi$ & $-120.2 \pm 0.1 \degree$ \\
+$\partial V_{c}/\partial C_x $ & $ 6.207 10^{6}\pm 9.5 10^{3} V/F $ \\
 \bottomrule
 \end{tabular}
 \caption{Risultati del fit}
 \end{table}
-Ora possiamo tornare all'equazione \eqref{eq:gen} e fare il fit con il valore di $\phi$ appena ricavato, in modo da ottenere $V_c$ e risalire alla variazione $\Delta C_m$ misurata col ponte
+Ora possiamo tornare all'equazione \eqref{eq:gen} e fare il fit con il valore di $\phi$ appena ricavato, in modo da ottenere $V_c$ e risalire alla variazione $\Delta C_m = V_c/(\partial V_{c}/\partial{C_x})$ misurata col ponte.
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{deltacm}
@@ -214,5 +212,5 @@ Ora possiamo tornare all'equazione \eqref{eq:gen} e fare il fit con il valore di
 \end{figure}
 La retta tracciata $y=x$ è l'andamento teorico che dovremmo avere, ovvero la variazione che abbiamo fatto deve corrispodere alla variazione misurata dall'uscita del ponte ricavata tramite l'analisi appena fatta. L'incertezza su $\Delta C_m$ e di conseguenza la sensibilità del nostro ponte è stata calcolata con la deviazione standard su $\Delta C_m$.
 \section{Conclusioni}
-Dall'ultimo grafico è evidente che le variazioni di capacità misurate non corrispondono alle variazioni ricavate dall'analisi, l'andamento però è sistematico e si può spiegare con il fatto che il ponte che credevamo bilanciato in realtà non lo era. Lo si può anche notare dal gradico dove è stata rappresentata anche l'analisi dell'uscita del ponte bilanciato, ci ha fornito un $\Delta C_m$ non nullo.
+Dall'ultimo grafico è evidente che le variazioni di capacità misurate non corrispondono alle variazioni ricavate dall'analisi, l'andamento però è sistematico e si può spiegare con il fatto che il ponte che credevamo bilanciato in realtà non lo era. Lo si può anche notare dal grafico dove è stata rappresentata anche l'analisi dell'uscita del ponte bilanciato, ci ha fornito un $\Delta C_m$ non nullo.
 \end{document}
