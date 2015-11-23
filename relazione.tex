@@ -70,7 +70,7 @@ $R_x$ & $999.021 \pm 10.9902 \ohm$  \\
 $C_2$ & $112 \pm 5.48 \text{ nF}$ \\
 \bottomrule
 \end{tabular}
-\caption{Valori misurati con il multimetro digitale}
+\caption{Valori misurati con il multimetro digitale ($C_2$ condensatore di ceramica)}
 \end{table}
 
 \begin{figure}[H]
@@ -186,11 +186,6 @@ Possiamo trovare
 \begin{equation}
 \frac{\partial{V_{c}}}{\partial{C_x}} = \sqrt{B_s^2 + B_c^2}
 \end{equation}
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{fitsensibilita}
-\caption{Fit per la sensibilità}
-\end{figure}
 Dai nostri dati otteniamo
 \begin{table}[H]
 \centering
@@ -211,7 +206,28 @@ Ora possiamo tornare all'equazione \eqref{eq:gen} e fare il fit con il valore di
 \caption{$\Delta C_m$ ricavati dall'analisi e $\Delta C_x$ che abbiamo variato}
 \end{figure}
 La retta tracciata $y=x$ è l'andamento teorico che dovremmo avere, ovvero la variazione che abbiamo fatto deve corrispodere alla variazione misurata dall'uscita del ponte ricavata tramite l'analisi appena fatta. L'incertezza su $\Delta C_m$ e di conseguenza la sensibilità del nostro ponte è stata calcolata con la deviazione standard su $\Delta C_m$.
+\begin{table}[H]
+\centering
+\begin{tabular}{c}
+\toprule
+Sensibilità [pF]\\
+\midrule
+\rowcolor{black!20}13.56 \\
+23.10\\
+\rowcolor{black!20}14.00\\
+10.84\\
+\rowcolor{black!20}15.49\\
+10.99\\
+\rowcolor{black!20}23.76\\
+18.46\\
+\rowcolor{black!20}15.05\\
+16.10\\
+\bottomrule
+\end{tabular}
+\caption{Sensibilità del ponte}
+\end{table}
 \section{Conclusioni}
 Dall'ultimo grafico è evidente che le variazioni di capacità misurate non corrispondono alle variazioni ricavate dall'analisi, l'andamento però è sistematico e si può spiegare con il fatto che il ponte che credevamo bilanciato in realtà non lo era. Lo si può anche notare dal grafico dove è stata rappresentata anche l'analisi dell'uscita del ponte bilanciato, ci ha fornito un $\Delta C_m$ non nullo. Lo sbilanciamento si può quantificare usando il grafico ed è di circa $0.1 \text{ nF}$. Bisogna notare quando abbiamo bilanciato il ponte, avevamo a disposizione una decade di resistenze con $\Delta R_r$ minimo di $1 \ohm$. Si può vedere utilizzando l'equazione \eqref{eq:cx}, che una variazione di un $\ohm$ risulta in una variazione di circa $0.32 \text{ nF}$ ovvero una quantità maggiore dell'errore che abbiamo commesso per il bilanciamento.\\
-Bisogna inoltre notare che abbiamo trascurato la presenza dell'oscilloscopio nell'analisi, in quanto risultava trascurabile. Infatti nel circuito "vero" la resistenza e il condensatore dell'oscilloscopio sono in parallelo a $C_x$ e $R_x$: la resistenza e il condensatore equivalenti risultano diversi dai valori da noi usati per meno di $1 \%$. 
+Bisogna inoltre notare che abbiamo trascurato la presenza dell'oscilloscopio nell'analisi, in quanto risultava trascurabile. Infatti nel circuito "vero" la resistenza e il condensatore dell'oscilloscopio sono in parallelo a $C_x$ e $R_x$: la resistenza e il condensatore equivalenti risultano diversi dai valori da noi usati per valori dell'ordine dell'1 per mille. 
+
 \end{document}
